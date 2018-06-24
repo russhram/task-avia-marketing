@@ -1,7 +1,7 @@
 const promiseLib = require('bluebird');
 const pgPromise = require('pg-promise');
 
-const pgp = pgPromise({ promiseLib });
+const pgp = pgPromise({promiseLib});
 const errorCode = pgp.errors.queryResultErrorCode;
 const dbPath = 'postgres://localhost:5432/task_avia_marketing';
 const db = pgp(dbPath);
@@ -25,6 +25,7 @@ function getUser(req, res, next) {
 
 function createUser(req, res, next) {
   db.task(function* (t) {
+      console.log(req.body)
       let user = yield makeGetUserPromise(t, req.body.id).then(r => r, err => {
         if (errorCode.noData === err.code) {
           return null;

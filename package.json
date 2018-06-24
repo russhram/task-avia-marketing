@@ -2,10 +2,13 @@
   "name": "task-avia-marketing",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:8000/",
   "dependencies": {
     "bluebird": "^3.5.1",
     "immutable": "^3.8.2",
     "lodash.foreach": "^4.5.0",
+    "lodash.isfunction": "^3.0.9",
+    "lodash.isobject": "^3.0.2",
     "pg-promise": "^8.4.4",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
