@@ -1,0 +1,22 @@
+@font-face {
+  font-family: "Shnobel";
+  font-style: normal;
+  font-weight: normal;
+  src: url("./assets/fonts/Shnobel.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: normal;
+  src: url("./assets/fonts/OpenSans-Regular.woff") format("woff");
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans";
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  background-image: url("./assets/images/back.svg");
+  background-size: cover;
+}

@@ -1,0 +1,21 @@
+.step-row {
+  display: flex;
+
+  .step-row__number {
+    margin-right: 1.67vw;
+  }
+
+  .step-field {
+    &.step-field_checked {
+      opacity: .5;
+    }
+
+    .step-field__title {
+      margin-bottom: 1.33vw;
+
+      .step-field-title {
+        font-size: 1.44vw;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.step-number {
+  font-family: "Shnobel";
+  font-size: 2.93vw;
+  color: #ffffff;
+
+  .step-number__item {
+    margin-top: 0.7vw;
+
+    &.step-number__item_checked {
+      margin-top: 0.4vw;
+    }
+
+    .step-number-checked {
+      width: 20px;
+      height: 20px;
+      background: url("./../assets/images/checked.svg") 50% 50% no-repeat;
+    }
+  }
+}

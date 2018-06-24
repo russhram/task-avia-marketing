@@ -4,6 +4,7 @@ import {Provider} from 'react-redux';
 import store from './store';
 import App from './App';
 import appSaga from './sagas';
+import './index.css';
 
 store.runSaga(appSaga);
 

@@ -1,6 +1,7 @@
 import {applyMiddleware, createStore, combineReducers, compose, bindActionCreators} from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import forEach from 'lodash.foreach';
+import {reducer as formReducer} from 'redux-form/immutable';
 import {commonReducer} from './reducers';
 import * as actions from './actions';
 
@@ -14,6 +15,7 @@ const initialState = {};
 
 const reducers = combineReducers({
   common: commonReducer,
+  form: formReducer,
 });
 
 const store = createStore(

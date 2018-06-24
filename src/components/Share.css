@@ -1,0 +1,7 @@
+.share {
+  display: flex;
+
+  .share__item:not(:last-child) {
+    margin-right: 1.6vw;
+  }
+}
