@@ -12,20 +12,26 @@ const makeCreateUserPromise = (ctx, user) => ctx
     'insert into users (id, shared, email) values (${id}, ${shared}, ${email}) RETURNING id, shared, email',
     user
   );
+
+const makeUpdateUserPromise = (ctx, user) => {
+  return ctx
+    .one(
+      'update users set shared=${shared}, email=${email} where id=${id} RETURNING id, shared, email',
+      user
+    );
+};
+
 const catchErr = cb => err => cb(err);
+const successUserPromise = res => promise => promise.then(user => {
+  res.status(200).json(user);
+});
 
 function getUser(req, res, next) {
-  makeGetUserPromise(db, req.params.id)
-    .then(user => {
-      res.status(200).json(user);
-    })
-    .catch(catchErr(next));
+  successUserPromise(res)(makeGetUserPromise(db, req.params.id)).catch(catchErr(next));
 }
 
-
 function createUser(req, res, next) {
-  db.task(function* (t) {
-      console.log(req.body)
+  successUserPromise(res)(db.task(function* (t) {
       let user = yield makeGetUserPromise(t, req.body.id).then(r => r, err => {
         if (errorCode.noData === err.code) {
           return null;
@@ -37,15 +43,21 @@ function createUser(req, res, next) {
         user = yield makeCreateUserPromise(t, req.body)
       }
       return user;
-    })
-    .then(user => {
-      res.status(200).json(user);
-    })
+    }))
     .catch(catchErr(next));
+}
+
+function updateUser(req, res, next) {
+  const body = {
+    ...req.body,
+    id: req.params.id,
+  };
+  successUserPromise(res)(makeUpdateUserPromise(db, body)).catch(catchErr(next));
 }
 
 module.exports = {
   createUser,
   getUser,
+  updateUser,
 };
 

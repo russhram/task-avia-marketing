@@ -11,7 +11,8 @@ const defaultUser = User({
 
 const makeRequestBody = body => JSON.stringify(toJS(body));
 
-const doRequest = (url, descriptor: {method, type}, body) => {
+const doRequest = (url, descriptor, body) => {
+  const { method, type = 'application/json' } = descriptor;
   const headers = {
     'Content-Type': type
   };
@@ -20,9 +21,8 @@ const doRequest = (url, descriptor: {method, type}, body) => {
 };
 
 function* fetchUserSaga(action) {
-  const makeUserRequest = () => doRequest('/api/users', 'post', defaultUser);
+  const makeUserRequest = () => doRequest('/api/users', {method: 'post'}, defaultUser);
   const user = yield call(makeUserRequest, action.payload);
-  console.log('user', user)
   yield put(putUser(user));
 }
 
