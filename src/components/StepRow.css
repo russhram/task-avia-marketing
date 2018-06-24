@@ -8,6 +8,7 @@
   .step-field {
     &.step-field_checked {
       opacity: .5;
+      pointer-events: none;
     }
 
     .step-field__title {

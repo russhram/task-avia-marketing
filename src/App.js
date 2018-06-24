@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import {Field, reduxForm} from 'redux-form/immutable'
 import {connect} from 'react-redux';
 
@@ -7,16 +7,37 @@ import './App.css';
 import Share from './components/Share';
 import StepRow from './components/StepRow';
 import {userSelector} from "./selectors";
+import {SHARED, EMAIL} from "./models";
 import labels from './labels';
+import Input from './components/Input';
+import Button from './components/Button';
 
-@reduxForm({form: 'userForm'})
+const validate = ({email}) => {
+  const errors = {};
+  if (!email || !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
+    errors.email = 'TEST'
+  }
+  return errors;
+};
+
+@reduxForm({form: 'userForm', validate})
 class UserForm extends Component {
   render() {
-    const {submitting} = this.props;
+    const {handleSubmit, submitting} = this.props;
+    console.log('submitting', submitting)
     return (
-      <button type="submit" disabled={submitting}>
-        Submit
-      </button>
+      <form className="user-form" onSubmit={handleSubmit}>
+        <div className="user-form__item">
+          <Field name="email" type="email" component={({input, type, meta: {touched, error}}) => (
+            <Input type={type} input={input} error={touched && error}/>
+          )}/>
+        </div>
+        <div className="user-form__item">
+          <Button type="submit" disabled={submitting}>
+            {labels.SEND}
+          </Button>
+        </div>
+      </form>
     );
   }
 }
@@ -28,16 +49,17 @@ class App extends Component {
   }
 
   render() {
-    const {user} = this.props;
     return (
       <div className="app">
-        <div className="app__share">
-          <StepRow user={user} fieldName="shared" number={1} title={labels.SHARE}>
+        <div className="app__step">
+          <StepRow fieldName={SHARED} number={1} title={labels.SHARE}>
             <Share/>
           </StepRow>
         </div>
-        <div className="app__form">
-          <UserForm/>
+        <div className="app__step">
+          <StepRow fieldName={EMAIL} number={2} title={labels.EMAIL}>
+            <UserForm/>
+          </StepRow>
         </div>
       </div>
     );

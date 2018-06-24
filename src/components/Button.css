@@ -1,0 +1,25 @@
+.button {
+  margin: 0;
+  line-height: 1.36;
+  font-family: Shnobel;
+  color: #7f4156;
+  border: none;
+  background: #ffffff;
+  outline: none;
+  transition: background .3s;
+  transform: translateZ(0);
+  cursor: pointer;
+  max-height: 5.15vw;
+  min-width: 15.44vw;
+  min-height: 5.15vw;
+  font-size: 2.87vw;
+  padding: .51vw 2.94vw 0;
+  border-radius: 5.15vw;
+
+  &.button_disabled {
+    border: .18vw solid #fff;
+    opacity: .7;
+    pointer-events: none;
+    background: transparent;
+  }
+}

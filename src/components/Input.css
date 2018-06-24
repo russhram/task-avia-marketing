@@ -1,0 +1,19 @@
+.input {
+  min-height: 4.04vw;
+  padding: .88vw 1.47vw;
+  margin-bottom: 1.47vw;
+  border: .15vw solid transparent;
+  border-radius: 3.68vw;
+  font-size: 1.32vw;
+  text-align: left;
+  width: 100%;
+  background: #ffffff;
+
+  &:focus {
+    outline: none;
+  }
+
+  &.input_error {
+    border-color: red;
+  }
+}
