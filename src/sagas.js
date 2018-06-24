@@ -11,7 +11,7 @@ const defaultUser = User({
 
 const makeRequestBody = body => JSON.stringify(toJS(body));
 
-const doRequest = (url, descriptor: {method, type = 'application/json'}, body) => {
+const doRequest = (url, descriptor: {method, type}, body) => {
   const headers = {
     'Content-Type': type
   };
