@@ -5,7 +5,7 @@ import {ApiMethods, doRequest, USERS_API} from './api';
 
 const defaultUser = User({
   id: 1,
-  shared: true,
+  shared: false,
   email: null,
 });
 

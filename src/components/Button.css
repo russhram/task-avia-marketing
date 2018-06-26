@@ -15,6 +15,7 @@
   font-size: 2.87vw;
   padding: .51vw 2.94vw 0;
   border-radius: 5.15vw;
+  user-select: none;
 
   &.button_disabled {
     border: .18vw solid #fff;
