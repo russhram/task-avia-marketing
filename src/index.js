@@ -1,12 +1,14 @@
 import React, {Fragment} from 'react';
 import {render} from 'react-dom';
 import {Provider} from 'react-redux';
-import { BrowserRouter as Router } from 'react-router-dom';
+import {BrowserRouter as Router, Switch} from 'react-router-dom';
 import store from './store';
 import AppRoute from './AppRoute';
 import appSaga from './sagas';
 import './index.css';
 import logo from './assets/images/logo.svg';
+import ActionPage from './components/ActionPage';
+import FinalPage from './components/FinalPage';
 
 store.runSaga(appSaga);
 
@@ -15,12 +17,15 @@ const Root = (
     <Fragment>
       <div className="app__page">
         <Router>
-          <AppRoute />
+          <Switch>
+            <AppRoute exact path="/" component={ActionPage}/>
+            <AppRoute exact path="/final" component={FinalPage}/>
+          </Switch>
         </Router>
       </div>
-      <div className="app__logo">
+      <a href="https://www.aviasales.ru/" className="app__logo">
         <img src={logo}/>
-      </div>
+      </a>
     </Fragment>
   </Provider>
 );
