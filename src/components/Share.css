@@ -1,7 +1,12 @@
 .share {
   display: flex;
+  justify-content: space-between;
+}
 
-  .share__item:not(:last-child) {
-    margin-right: 1.6vw;
+.SocialMediaShareButton {
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
   }
 }

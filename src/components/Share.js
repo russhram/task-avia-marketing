@@ -50,6 +50,7 @@ const Share = ({user, updateUser}) => {
             <Icon
               size={57}
               round
+              className="test"
             />
           </Button>
         </div>

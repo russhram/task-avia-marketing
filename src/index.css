@@ -16,6 +16,10 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: "Open Sans";
@@ -23,4 +27,17 @@ body {
   -webkit-font-smoothing: antialiased;
   background-image: url("./assets/images/back.svg");
   background-size: cover;
+  height: 100%;
+}
+
+.app, .app__page {
+  height: 100%;
+}
+
+.app {
+  .app__logo {
+    position: absolute;
+    top: 1.84vw;
+    left: 1.84vw;;
+  }
 }

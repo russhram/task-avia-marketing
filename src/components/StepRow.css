@@ -1,8 +1,14 @@
 .step-row {
   display: flex;
+  width: 100%;
 
   .step-row__number {
     margin-right: 1.67vw;
+    width: 30px;
+  }
+
+  .step-row__field {
+    flex: 1;
   }
 
   .step-field {

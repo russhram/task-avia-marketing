@@ -9,6 +9,7 @@ import Input from './Input';
 import Button from './Button';
 import {isEmail} from './../validationRules';
 import {updateUser} from './../actions';
+import './UserForm.css';
 
 const validate = form => {
   const email = form.get(EMAIL);
@@ -19,7 +20,6 @@ const validate = form => {
 };
 
 const submit = (form, dispatch, {user}) => {
-  //console.log('test', props)
   updateUser.dispatch(user.merge(form));
 };
 
@@ -32,7 +32,6 @@ class UserForm extends Component {
 
   render() {
     const {handleSubmit, valid} = this.props;
-    console.log(this.props)
     return (
       <form className="user-form" onSubmit={handleSubmit}>
         <div className="user-form__item">

@@ -17,10 +17,16 @@
   border-radius: 5.15vw;
   user-select: none;
 
+  &:hover {
+    background: #7f4156;
+    color: #ffffff;
+  }
+
   &.button_disabled {
-    border: .18vw solid #fff;
+    border: .18vw solid #ffffff;
     opacity: .7;
     pointer-events: none;
     background: transparent;
+    color: #ffffff;
   }
 }
