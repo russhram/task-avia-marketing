@@ -1,0 +1,46 @@
+.final-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-image: url("./assets/images/man.svg");
+  background-size: contain;
+  background-position: 50% 50%;
+
+  .final-page__item {
+    max-width: 0.25rem;
+    width: 100%;
+
+    &.final-page__item_crossed-title {
+      text-align: center;
+      margin-bottom: 0.0184rem;
+    }
+  }
+
+  .final-page-crossed-title {
+    position: relative;
+    color: #7f4156;
+    font-size: 0.0368rem;
+    font-family: 'Shnobel';
+    text-align: center;
+    display: inline-block;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 45%;
+      left: -15%;
+      background-color: #7f4156;
+      width: 130%;
+      height: .003rem;
+    }
+  }
+
+  .final-page-title-extra {
+    font-size: .05rem;
+    font-family: 'Shnobel';
+    text-align: center;
+  }
+}

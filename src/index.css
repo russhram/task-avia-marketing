@@ -14,10 +14,12 @@
 
 * {
   box-sizing: border-box;
+  font-size: 0;
 }
 
 html {
   height: 100%;
+  font-size: 120vw;
 }
 
 body {
@@ -35,9 +37,52 @@ body {
 }
 
 .app {
+  display: flex;
+  justify-content: center;
+
   .app__logo {
     position: absolute;
-    top: 1.84vw;
-    left: 1.84vw;;
+    top: 0.0184rem;
+    left: 0.0184rem;;
+  }
+
+  .app__page {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 140vw;
+  }
+}
+
+@media (max-width: 1000px) {
+  html {
+    font-size: 160vw;
+  }
+}
+
+@media (max-width: 850px) {
+  html {
+    font-size: 180vw;
+  }
+}
+
+@media (max-width: 750px) {
+  html {
+    font-size: 200vw;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 250vw;
+  }
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 300vw;
   }
 }

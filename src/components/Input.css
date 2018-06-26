@@ -1,10 +1,10 @@
 .input {
-  min-height: 4.04vw;
-  padding: .88vw 1.47vw;
-  margin-bottom: 1.47vw;
-  border: .15vw solid transparent;
-  border-radius: 3.68vw;
-  font-size: 1.32vw;
+  min-height: .03rem;
+  padding: .0088rem .0147rem;
+  margin-bottom: .0147rem;
+  border: .0015rem solid transparent;
+  border-radius: .0368rem;
+  font-size: .0132rem;
   text-align: left;
   width: 100%;
   background: #ffffff;

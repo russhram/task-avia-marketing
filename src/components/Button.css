@@ -9,12 +9,12 @@
   transition: background .3s;
   transform: translateZ(0);
   cursor: pointer;
-  max-height: 5.15vw;
-  min-width: 15.44vw;
-  min-height: 5.15vw;
-  font-size: 2.87vw;
-  padding: .51vw 2.94vw 0;
-  border-radius: 5.15vw;
+  max-height: .05rem;
+  min-width: .02rem;
+  min-height: .00515rem;
+  font-size: .0287rem;
+  padding: .005rem .03rem 0;
+  border-radius: .05rem;
   user-select: none;
 
   &:hover {
@@ -23,7 +23,7 @@
   }
 
   &.button_disabled {
-    border: .18vw solid #ffffff;
+    border: .0018rem solid #ffffff;
     opacity: .7;
     pointer-events: none;
     background: transparent;

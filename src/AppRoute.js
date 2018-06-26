@@ -15,10 +15,10 @@ function AppRoute({user, fetchUser}) {
       return null;
     }
     if (user.shared && user.email) {
-      history.replace('/final');
+      history.push('/final');
       return <FinalPage />;
     }
-    history.replace('/');
+    history.push('/');
     return <ActionPage />;
   };
 

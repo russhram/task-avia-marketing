@@ -1,13 +1,13 @@
 .step-number {
   font-family: "Shnobel";
-  font-size: 2.93vw;
   color: #ffffff;
 
   .step-number__item {
-    margin-top: 0.7vw;
+    margin-top: .007rem;
+    font-size: .0293rem;
 
     &.step-number__item_checked {
-      margin-top: 0.4vw;
+      margin-top: .004rem;
     }
 
     .step-number-checked {

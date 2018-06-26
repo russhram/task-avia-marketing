@@ -3,7 +3,7 @@
   width: 100%;
 
   .step-row__number {
-    margin-right: 1.67vw;
+    margin-right: 0.0167rem;
     width: 30px;
   }
 
@@ -18,10 +18,10 @@
     }
 
     .step-field__title {
-      margin-bottom: 1.33vw;
+      margin-bottom: 0.0133rem;
 
       .step-field-title {
-        font-size: 1.44vw;
+        font-size: 0.0144rem;
       }
     }
   }

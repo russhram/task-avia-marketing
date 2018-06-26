@@ -1,13 +1,10 @@
 import React from 'react';
-import {connect} from 'react-redux';
 
-import {fetchUser} from './actions';
 import './ActionPage.css';
 import Share from './components/Share';
 import StepRow from './components/StepRow';
 import {SHARED, EMAIL} from "./models";
 import labels from './labels';
-import {isEmail} from './validationRules';
 import UserForm from './components/UserForm';
 import PageTitle from './components/PageTitle';
 
