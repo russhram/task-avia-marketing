@@ -25,4 +25,4 @@ const Root = (
   </Provider>
 );
 
-render(Root, document.querySelector('.app'));
+render(Root, document.querySelector('.app')); // eslint-disable-line no-undef

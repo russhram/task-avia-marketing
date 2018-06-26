@@ -11,9 +11,9 @@ export const makeRequestBody = body => body ? JSON.stringify(toJS(body)) : body;
 export const doRequest = (url, descriptor, body) => {
   const {method = ApiMethods.GET, type = 'application/json'} = descriptor;
   const headers = {
-    'Content-Type': type
+    'Content-Type': type,
   };
-  return fetch(url, {method, headers, body: makeRequestBody(body)})
+  return fetch(url, {method, headers, body: makeRequestBody(body)}) // eslint-disable-line no-undef
     .then(r => r.json());
 };
 

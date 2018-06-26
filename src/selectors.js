@@ -1,6 +1,5 @@
 import {createSelector} from 'reselect';
 import identity from 'lodash.identity';
-import Immutable from 'immutable';
 
 export const userSelector = createSelector(state => ({
   user: state.common.get('user'),
@@ -13,5 +12,5 @@ export const userFormSelector = createSelector(
     initialValues: {
       email: user.email,
     },
-  })
+  }),
 );

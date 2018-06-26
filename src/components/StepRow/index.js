@@ -1,13 +1,15 @@
 import React from 'react';
 import classNames from 'classnames';
 import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 
-import './StepRow.css'
+import './StepRow.css';
 import StepNumber from '../StepNumber';
 import {userSelector} from '../../selectors';
+import {User} from '../../models';
 
-const StepRow = ({user, children, number, fieldName, title}) => {
-  const checked = user[fieldName];
+function StepRow({user, children, number, fieldName, title}) {
+  const checked = !!user[fieldName];
   return (
     <div className="step-row">
       <div className="step-row__number">
@@ -24,7 +26,15 @@ const StepRow = ({user, children, number, fieldName, title}) => {
         </div>
       </div>
     </div>
-  )
+  );
+}
+
+StepRow.propTypes = {
+  user: PropTypes.instanceOf(User).isRequired,
+  children: PropTypes.node.isRequired,
+  number: PropTypes.number.isRequired,
+  fieldName: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default connect(userSelector)(StepRow);

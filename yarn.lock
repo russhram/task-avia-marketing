@@ -4425,10 +4425,6 @@ lodash.defaults@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/lodash.defaults/-/lodash.defaults-4.2.0.tgz#d09178716ffea4dde9e5fb7b37f6f0802274580c"
 
-lodash.foreach@^4.5.0:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/lodash.foreach/-/lodash.foreach-4.5.0.tgz#1a6a35eace401280c7f06dddec35165ab27e3e53"
-
 lodash.identity@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/lodash.identity/-/lodash.identity-3.0.0.tgz#ad7bc6a4e647d79c972e1b80feef7af156267876"
@@ -5737,7 +5733,7 @@ prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.0:
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
 
-prop-types@^15.6.1:
+prop-types@^15.6.1, prop-types@^15.6.2:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   dependencies:

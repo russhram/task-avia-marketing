@@ -1,15 +1,11 @@
-import {applyMiddleware, createStore, combineReducers, compose, bindActionCreators} from 'redux';
+import {applyMiddleware, createStore, combineReducers, compose} from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import forEach from 'lodash.foreach';
 import {reducer as formReducer} from 'redux-form/immutable';
 import {commonReducer} from './reducers';
-import * as actions from './actions';
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; // eslint-disable-line no-undef
 
 const sagaMiddleware = createSagaMiddleware();
-
-let middlewares = [sagaMiddleware];
 
 const initialState = {};
 
@@ -21,12 +17,8 @@ const reducers = combineReducers({
 const store = createStore(
   reducers,
   initialState,
-  composeEnhancers(applyMiddleware(...middlewares))
+  composeEnhancers(applyMiddleware(sagaMiddleware)),
 );
-
-forEach(actions, (creator) => {
-  creator.dispatch = bindActionCreators(creator, store.dispatch);
-});
 
 store.runSaga = sagaMiddleware.run;
 

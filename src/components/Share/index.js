@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 
 import {
   VKShareButton,
@@ -15,6 +16,7 @@ import {
 import {updateUser} from '../../actions';
 import {userSelector} from '../../selectors';
 import './Share.css';
+import {User} from '../../models';
 
 const socials = [
   {
@@ -35,10 +37,9 @@ const socials = [
   },
 ];
 
-const enhance = connect(userSelector, {updateUser});
 const shareUrl = 'https://kandidat.aviasales.ru/';
 
-const Share = ({user, updateUser}) => {
+function Share({user, updateUser}) {
   return (
     <div className="share">
       {socials.map(({button: Button, icon: Icon}, idx) => (
@@ -57,6 +58,11 @@ const Share = ({user, updateUser}) => {
       ))}
     </div>
   );
+}
+
+Share.propTypes = {
+  user: PropTypes.instanceOf(User).isRequired,
+  updateUser: PropTypes.func.isRequired,
 };
 
-export default enhance(Share);
+export default connect(userSelector, {updateUser})(Share);

@@ -8,5 +8,5 @@ const initialState = Immutable.Map({
 });
 
 export const commonReducer = handleActions({
-  [putUser]: (state, {payload: user}) => state.mergeIn(['user'], user)
+  [putUser]: (state, {payload: user}) => state.mergeIn(['user'], user),
 }, initialState);
