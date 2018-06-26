@@ -1,5 +1,5 @@
 import {put, all, takeEvery, call} from 'redux-saga/effects';
-import {putUser, fetchUser, updateUser} from './actions';
+import {putData, fetchUser, updateUser} from './actions';
 import {User} from './models';
 import {ApiMethods, doRequest, USERS_API} from './api';
 
@@ -11,15 +11,25 @@ const defaultUser = User({
 
 function* fetchUserSaga() {
   const makeUserRequest = () => doRequest(USERS_API, {method: ApiMethods.POST}, defaultUser);
-  const user = yield call(makeUserRequest);
-  yield put(putUser(user));
+  yield put(putData({isLoading: true}));
+  const {error, ...userRaw} = yield call(makeUserRequest);
+  if (error) {
+    yield put(putData({isLoading: false, error}));
+  } else {
+    yield put(putData({user: User(userRaw), isLoading: false}));
+  }
 }
 
 function* updateUserSaga(action) {
   const user = action.payload;
   const makeUserRequest = userPayload => doRequest(`${USERS_API}/${userPayload.id}`, {method: ApiMethods.PUT}, userPayload);
-  const updatedUser = yield call(makeUserRequest, user);
-  yield put(putUser(updatedUser));
+  yield put(putData({isLoading: true}));
+  const {error, ...updatedUserRaw} = yield call(makeUserRequest, user);
+  if (error) {
+    yield put(putData({isLoading: false, error}));
+  } else {
+    yield put(putData({user: User(updatedUserRaw), isLoading: false}));
+  }
 }
 
 function* watchFetchUser() {

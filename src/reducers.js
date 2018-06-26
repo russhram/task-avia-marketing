@@ -1,6 +1,6 @@
 import Immutable from 'immutable';
 import {handleActions} from 'redux-actions';
-import {putUser} from './actions';
+import {putData} from './actions';
 import {User} from './models';
 
 const initialState = Immutable.Map({
@@ -8,5 +8,5 @@ const initialState = Immutable.Map({
 });
 
 export const commonReducer = handleActions({
-  [putUser]: (state, {payload: user}) => state.mergeIn(['user'], user),
+  [putData]: (state, {payload}) => state.merge(payload),
 }, initialState);

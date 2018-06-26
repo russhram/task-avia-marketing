@@ -19,11 +19,9 @@ app.use((req, res, next) => {
 // error handlers
 
 app.use(function(err, req, res, next) {
-  res.status(err.status || 500)
-    .json({
-      status: 'error',
-      message: err.message
-    });
+  res
+    .status(err.status || 500)
+    .json({error: {status: err.status || 500, message: err.message, errorId: 'DB'}});
 });
 
 app.listen(8000);
