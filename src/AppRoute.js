@@ -9,14 +9,16 @@ import ActionPage from './ActionPage';
 import FinalPage from './FinalPage';
 
 function AppRoute({user, fetchUser}) {
-  const render = () => {
+  const render = ({history}) => {
     if (!user.id) {
       fetchUser();
       return null;
     }
     if (user.shared && user.email) {
+      history.push('/final');
       return <FinalPage />;
     }
+    history.push('/');
     return <ActionPage />;
   };
 
