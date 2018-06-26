@@ -13,7 +13,7 @@
     .step-number-checked {
       width: 20px;
       height: 20px;
-      background: url("./../assets/images/checked.svg") 50% 50% no-repeat;
+      background: url("../../assets/images/checked.svg") 50% 50% no-repeat;
     }
   }
 }

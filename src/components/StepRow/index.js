@@ -3,8 +3,8 @@ import classNames from 'classnames';
 import {connect} from 'react-redux';
 
 import './StepRow.css'
-import StepNumber from './StepNumber';
-import {userSelector} from './../selectors';
+import StepNumber from '../StepNumber';
+import {userSelector} from '../../selectors';
 
 const StepRow = ({user, children, number, fieldName, title}) => {
   const checked = user[fieldName];

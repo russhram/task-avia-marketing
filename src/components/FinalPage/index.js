@@ -1,7 +1,7 @@
 import React from 'react';
 
-import labels from './labels';
-import PageTitle from './components/PageTitle';
+import labels from '../../labels';
+import PageTitle from '../PageTitle';
 import './FinalPage.css';
 
 function FinalPage() {

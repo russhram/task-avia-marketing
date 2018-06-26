@@ -12,8 +12,8 @@ import {
   OKIcon,
 } from 'react-share';
 
-import {updateUser} from './../actions';
-import {userSelector} from './../selectors';
+import {updateUser} from '../../actions';
+import {userSelector} from '../../selectors';
 import './Share.css';
 
 const socials = [

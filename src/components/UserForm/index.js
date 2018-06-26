@@ -2,13 +2,13 @@ import React, {Component} from 'react';
 import {Field, reduxForm} from 'redux-form/immutable'
 import {connect} from 'react-redux';
 
-import {userFormSelector} from './../selectors';
-import {SHARED, EMAIL} from './../models';
-import labels from './../labels';
-import Input from './Input';
-import Button from './Button';
-import {isEmail} from './../validationRules';
-import {updateUser} from './../actions';
+import {userFormSelector} from '../../selectors';
+import {SHARED, EMAIL} from '../../models';
+import labels from '../../labels';
+import Input from '../Input';
+import Button from '../Button';
+import {isEmail} from '../../validationRules';
+import {updateUser} from '../../actions';
 import './UserForm.css';
 
 const validate = form => {

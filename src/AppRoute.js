@@ -5,8 +5,8 @@ import {Route} from 'react-router-dom';
 import {userSelector} from './selectors';
 import {fetchUser} from './actions';
 
-import ActionPage from './ActionPage';
-import FinalPage from './FinalPage';
+import ActionPage from './components/ActionPage';
+import FinalPage from './components/FinalPage';
 
 function AppRoute({user, fetchUser}) {
   const render = ({history}) => {

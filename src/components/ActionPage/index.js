@@ -1,12 +1,12 @@
 import React from 'react';
 
 import './ActionPage.css';
-import Share from './components/Share';
-import StepRow from './components/StepRow';
-import {SHARED, EMAIL} from "./models";
-import labels from './labels';
-import UserForm from './components/UserForm';
-import PageTitle from './components/PageTitle';
+import Share from '../Share';
+import StepRow from '../StepRow';
+import {SHARED, EMAIL} from "../../models";
+import labels from '../../labels';
+import UserForm from '../UserForm';
+import PageTitle from '../PageTitle';
 
 function ActionPage() {
   return (
